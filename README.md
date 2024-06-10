@@ -7,51 +7,33 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Web Application for Classroom Attendance Management
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## About the Project
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+A web application for managing student attendance in classrooms. The system will offer functionalities to track attendance, manage divided sections, record reasons for absences, send automated notifications, and analyze attendance trends over time.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Project Objectives
 
-## Learning Laravel
+*	Develop a user-friendly web application using the Laravel framework.
+*	Facilitate student attendance tracking through barcode scanning.
+*	Implement functionalities for managing student data (add, edit, delete).
+*	Develop functionality to import a list of students from SARRA system into the program.
+*	Implement data validation rules to ensure accuracy.
+*	Enable searching for students based on various criteria.
+*	Track student attendance and calculate absence percentages.
+*	Identify and flag students exceeding a predefined absence threshold (e.g., 20%) within a specific period (semester, course).
+*	Manage semesters, courses offered, and teacher assignments.
+*	Manage classrooms and their capacities to accommodate potential sectioning due to high student numbers.
+*	Generate reports on student attendance for specific classes or periods, highlighting students with high absences.
+*	Effectively handle scenarios where classes are split into sections due to high student enrollment.
+*	Enable submission of reasons for absences, such as illness or approved leave.
+*	Send email alerts to students, advisors, or instructors when absence thresholds are exceeded.
+*	Absence Trend Analysis: Track and analyze student absence trends over time, such as weekly or monthly patterns.
+*	Manage users and permissions.
+*	Establish a secure login system with differentiated user roles and permissions for administrators and teachers.
+*	Implement a functionality to record exam attendance and to export it according to admission office given template.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
 ## Code of Conduct
 
