@@ -21,4 +21,4 @@ Route::middleware([
 });
 
 // route::get('/home', [HomeController::class, 'index']);
-route::get('/dashboard', [HomeController::class, 'index']);
+route::get('/dashboard', [StudentController::class, 'index']);
