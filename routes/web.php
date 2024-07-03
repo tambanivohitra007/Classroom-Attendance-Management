@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\StudentController;
 
+use App\Http\Controllers\CoursesController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,3 +24,5 @@ Route::middleware([
 
 // route::get('/home', [HomeController::class, 'index']);
 route::get('/dashboard', [StudentController::class, 'index']);
+route::get('/dashboard', [CoursesController::class, 'courses']);
+route::get('/students', [StudentController::class, 'students']);

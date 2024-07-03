@@ -20,4 +20,7 @@ class StudentController extends Controller
             return view('admin.home');
         }
     }
+    public function students(){
+        return view('students');
+    }
 }
