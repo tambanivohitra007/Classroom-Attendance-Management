@@ -10,9 +10,8 @@ use Illuminate\Support\Facades\DB;
 
 class CoursesController extends Controller
 {
-    function courses(){
-        $courses=Courses::all();
-        return view('dashboard',["courses"=>$courses]);
+    public function courses(){
+        return view('admin.courses');
     }
 
 }
