@@ -34,3 +34,5 @@ route::get('/teachers', [TeachersController::class, 'teachers']);
 route::get('/semesters', [SemestersController::class, 'semesters']);
 route::get('/courses', [CoursesController::class, 'courses']);
 route::get('/classrooms', [ClassroomsController::class, 'classrooms']);
+
+route::post('/dashboard', [StudentController::class, 'addstudent'])->name('addstudent');
