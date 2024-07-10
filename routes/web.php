@@ -6,6 +6,14 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\StudentController;
 
+use App\Http\Controllers\TeachersController;
+
+use App\Http\Controllers\SemestersController;
+
+use App\Http\Controllers\CoursesController;
+
+use App\Http\Controllers\ClassroomsController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,5 +28,11 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// route::get('/home', [HomeController::class, 'index']);
-route::get('/dashboard', [StudentController::class, 'index']);
+route::get('/dashboard', [HomeController::class, 'index']);
+route::get('/students', [StudentController::class, 'students']);
+route::get('/teachers', [TeachersController::class, 'teachers']);
+route::get('/semesters', [SemestersController::class, 'semesters']);
+route::get('/courses', [CoursesController::class, 'courses']);
+route::get('/classrooms', [ClassroomsController::class, 'classrooms']);
+
+route::post('/dashboard', [StudentController::class, 'addstudent'])->name('addstudent');
