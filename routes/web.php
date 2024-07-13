@@ -35,4 +35,6 @@ route::get('/semesters', [SemestersController::class, 'semesters']);
 route::get('/courses', [CoursesController::class, 'courses']);
 route::get('/classrooms', [ClassroomsController::class, 'classrooms']);
 
-route::post('/dashboard', [StudentController::class, 'addstudent'])->name('addstudent');
+route::post('/dashboard/addstudent', [StudentController::class, 'addstudent'])->name('addstudent');
+route::post('/dashboard/editstudent', [StudentController::class, 'updatestudent'])->name('updatestudent');
+route::get('/dashboard/deletestudent/{student_id}', [StudentController::class, 'deletestudent'])->name('deletestudent');

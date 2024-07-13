@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Auth;
 class StudentController extends Controller
 {
     public function students(){
-        return view('students');
+        $students = Student::all();
+        return view('students', compact('students'));
     }
     public function addstudent(Request $request){
         $request->validate([
@@ -38,6 +39,36 @@ class StudentController extends Controller
         } catch (\Exception $e){
             return redirect('/dashboard')->with('fail', 'Failed to add student'. $e->getMessage());
         }
+    }
 
+    public function updatestudent(Request $request){
+        $request->validate([
+            'student_id'=>'required|integer',
+            'first_name'=>'required|string',
+            'last_name'=>'required|string',
+            'nick_name'=>'nullable|string',
+            'email'=>'nullable|string'
+        ]);
+        try{
+            $update_student = Student::where('student_id', $request->student_id)->update([
+                'student_id' => $request->student_id,
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'nick_name' => $request->nick_name,
+                'email' => $request->email
+            ]);
+
+        return redirect('/dashboard')->with('success', 'Student updated successfully');
+        } catch (\Exception $e){
+            return redirect('/dashboard')->with('fail', 'Failed to add student'. $e->getMessage());
+        }
+    }
+    public function deletestudent($student_id){
+        try{
+            Student::where('student_id', $student_id)->firstOrFail()->delete();
+            return redirect('/dashboard')->with('success', 'Student deleted successfully');
+        } catch(\Exception $e) {
+            return redirect('/dashboard')->with('fail', 'Failed to delete student'. $e->getMessage());
+        }
     }
 }
