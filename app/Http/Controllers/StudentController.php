@@ -16,7 +16,7 @@ class StudentController extends Controller
 {
     public function students(){
         $students = Student::all();
-        return view('students', compact('students'));
+        return view('students', ["students"=>$students]);
     }
     public function addstudent(Request $request){
         $request->validate([
@@ -65,7 +65,7 @@ class StudentController extends Controller
     }
     public function deletestudent($student_id){
         try{
-            Student::where('student_id', $student_id)->firstOrFail()->delete();
+            Student::find($student_id)->delete();
             return redirect('/dashboard')->with('success', 'Student deleted successfully');
         } catch(\Exception $e) {
             return redirect('/dashboard')->with('fail', 'Failed to delete student'. $e->getMessage());

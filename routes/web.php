@@ -14,6 +14,8 @@ use App\Http\Controllers\CoursesController;
 
 use App\Http\Controllers\ClassroomsController;
 
+use App\Http\Controllers\RoleController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -36,5 +38,10 @@ route::get('/courses', [CoursesController::class, 'courses']);
 route::get('/classrooms', [ClassroomsController::class, 'classrooms']);
 
 route::post('/dashboard/addstudent', [StudentController::class, 'addstudent'])->name('addstudent');
-route::post('/dashboard/editstudent', [StudentController::class, 'updatestudent'])->name('updatestudent');
+route::post('/dashboard/editstudent/{student_id}', [StudentController::class, 'updatestudent'])->name('updatestudent');
 route::get('/dashboard/deletestudent/{student_id}', [StudentController::class, 'deletestudent'])->name('deletestudent');
+
+route::get('/dashboard/roles', [RoleController::class, 'list'])->name('listroles');
+route::post('/dashboard/roles', [RoleController::class, 'add'])->name('addrole');
+route::post('/dashboard/roles/{role_id}', [RoleController::class, 'updaterole'])->name('updaterole');
+route::get('/dashboard/roles/{role_id}', [RoleController::class, 'deleterole'])->name('deleterole');
