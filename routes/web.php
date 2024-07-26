@@ -16,6 +16,8 @@ use App\Http\Controllers\ClassroomsController;
 
 use App\Http\Controllers\RoleController;
 
+use App\Http\Controllers\PermissionsController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -41,7 +43,7 @@ route::post('/dashboard/addstudent', [StudentController::class, 'addstudent'])->
 route::post('/dashboard/editstudent/{student_id}', [StudentController::class, 'updatestudent'])->name('updatestudent');
 route::get('/dashboard/deletestudent/{student_id}', [StudentController::class, 'deletestudent'])->name('deletestudent');
 
-route::get('/dashboard/roles', [RoleController::class, 'list'])->name('listroles');
+route::get('/dashboard/roles', [RoleController::class, 'list'])->name('listrolesandpermissions');
 route::post('/dashboard/roles', [RoleController::class, 'add'])->name('addrole');
 route::post('/dashboard/roles/{role_id}', [RoleController::class, 'updaterole'])->name('updaterole');
 route::get('/dashboard/roles/{role_id}', [RoleController::class, 'deleterole'])->name('deleterole');
