@@ -60,7 +60,7 @@ class StudentController extends Controller
 
         return redirect('/dashboard')->with('success', 'Student updated successfully');
         } catch (\Exception $e){
-            return redirect('/dashboard')->with('fail', 'Failed to add student'. $e->getMessage());
+            return redirect('/dashboard')->with('fail', 'Failed to update student'. $e->getMessage());
         }
     }
     public function deletestudent($student_id){

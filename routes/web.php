@@ -18,6 +18,8 @@ use App\Http\Controllers\RoleController;
 
 use App\Http\Controllers\PermissionsController;
 
+use App\Http\Controllers\UserController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -47,3 +49,8 @@ route::get('/dashboard/roles', [RoleController::class, 'list'])->name('listroles
 route::post('/dashboard/roles', [RoleController::class, 'add'])->name('addrole');
 route::post('/dashboard/roles/{role_id}', [RoleController::class, 'updaterole'])->name('updaterole');
 route::get('/dashboard/roles/{role_id}', [RoleController::class, 'deleterole'])->name('deleterole');
+
+route::get('/dashboard/users', [UserController::class, 'list'])->name('listusers');
+route::post('/dashboard/adduser', [UserController::class, 'adduser'])->name('adduser');
+route::post('/dashboard/edituser/{id}', [UserController::class, 'updateuser'])->name('updateuser');
+route::get('/dashboard/deleteuser/{id}', [UserController::class, 'deleteuser'])->name('deleteuser');
