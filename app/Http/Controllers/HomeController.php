@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 
-use App\Models\Courses;
+use App\Models\Course;
 
 use App\Models\Student;
 
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     public function index(){
-        $courses = Courses::all();
+        $courses = Course::all();
         $students = Student::all();
         if (Auth::user()->user_role=='teacher'){
             return view ('dashboard', ["courses"=>$courses]);
