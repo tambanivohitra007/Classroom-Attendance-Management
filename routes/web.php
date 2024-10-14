@@ -16,6 +16,10 @@ use App\Http\Controllers\ClassroomsController;
 
 use App\Http\Controllers\RoleController;
 
+use App\Http\Controllers\PermissionsController;
+
+use App\Http\Controllers\UserController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -41,7 +45,26 @@ route::post('/dashboard/addstudent', [StudentController::class, 'addstudent'])->
 route::post('/dashboard/editstudent/{student_id}', [StudentController::class, 'updatestudent'])->name('updatestudent');
 route::get('/dashboard/deletestudent/{student_id}', [StudentController::class, 'deletestudent'])->name('deletestudent');
 
-route::get('/dashboard/roles', [RoleController::class, 'list'])->name('listroles');
+route::post('/dashboard/addteacher', [TeachersController::class, 'addteacher'])->name('addteacher');
+route::post('/dashboard/editteacher/{teacher_id}', [TeachersController::class, 'updateteacher'])->name('updateteacher');
+route::get('/dashboard/deleteteacher/{teacher_id}', [TeachersController::class, 'deleteteacher'])->name('deleteteacher');
+
+route::post('/dashboard/addsemester', [SemestersController::class, 'addsemester'])->name('addsemester');
+route::post('/dashboard/editsemester/{semester_id}', [SemestersController::class, 'updatesemester'])->name('updatesemester');
+route::get('/dashboard/deletesemester/{semester_id}', [SemestersController::class, 'deletesemester'])->name('deletesemester');
+
+route::post('/dashboard/addcourse', [CoursesController::class, 'addcourse'])->name('addcourse');
+route::post('/dashboard/editcourse/{course_id}', [CoursesController::class, 'updatecourse'])->name('updatecourse');
+route::get('/dashboard/deletecourse/{course_id}', [CoursesController::class, 'deletecourse'])->name('deletecourse');
+Route::put('/admin/courses/{course_id}', [CoursesController::class, 'updatecourse'])->name('updatecourse');
+
+
+route::get('/dashboard/roles', [RoleController::class, 'list'])->name('listrolesandpermissions');
 route::post('/dashboard/roles', [RoleController::class, 'add'])->name('addrole');
 route::post('/dashboard/roles/{role_id}', [RoleController::class, 'updaterole'])->name('updaterole');
 route::get('/dashboard/roles/{role_id}', [RoleController::class, 'deleterole'])->name('deleterole');
+
+route::get('/dashboard/users', [UserController::class, 'list'])->name('listusers');
+route::post('/dashboard/adduser', [UserController::class, 'adduser'])->name('adduser');
+route::post('/dashboard/edituser/{id}', [UserController::class, 'updateuser'])->name('updateuser');
+route::get('/dashboard/deleteuser/{id}', [UserController::class, 'deleteuser'])->name('deleteuser');
