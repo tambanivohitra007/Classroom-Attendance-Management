@@ -56,8 +56,11 @@ route::get('/dashboard/deletesemester/{semester_id}', [SemestersController::clas
 route::post('/dashboard/addcourse', [CoursesController::class, 'addcourse'])->name('addcourse');
 route::post('/dashboard/editcourse/{course_id}', [CoursesController::class, 'updatecourse'])->name('updatecourse');
 route::get('/dashboard/deletecourse/{course_id}', [CoursesController::class, 'deletecourse'])->name('deletecourse');
-Route::put('/admin/courses/{course_id}', [CoursesController::class, 'updatecourse'])->name('updatecourse');
+// Route::put('/admin/courses/{course_id}', [CoursesController::class, 'updatecourse'])->name('updatecourse');
 
+route::post('/dashboard/addclassroom', [ClassroomsController::class, 'addclassroom'])->name('addclassroom');
+route::post('/dashboard/editclassroom/{classroom_id}', [ClassroomsController::class, 'updateclassroom'])->name('updateclassroom');
+route::get('/dashboard/deleteclassroom/{classroom_id}', [ClassroomsController::class, 'deleteclassroom'])->name('deleteclassroom');
 
 route::get('/dashboard/roles', [RoleController::class, 'list'])->name('listrolesandpermissions');
 route::post('/dashboard/roles', [RoleController::class, 'add'])->name('addrole');

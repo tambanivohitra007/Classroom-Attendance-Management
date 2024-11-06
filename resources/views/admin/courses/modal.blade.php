@@ -81,7 +81,7 @@
             <!-- Modal body -->
             <form class="p-4 md:p-5" action="{{ route('updatecourse', ['course_id' => $course->course_id]) }}" method="post">
                 @csrf
-                @method('PUT')
+                {{-- @method('PUT') --}}
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2 sm:col-span-1">
                         <label for="course_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Course Name</label>
@@ -145,7 +145,7 @@
             <div class="p-4 md:p-5">
                 <p class="mb-4 text-gray-900 dark:text-white">You are about to delete this course. Coures Code : <span>{{$course->course_code}}</span></p>
                 <div class="flex justify-end">
-                        <form id="delete-student-form" action="{{ route('deletecourse', ['course_id' => $course->course_id]) }}" method="get">
+                        <form id="delete-course-form" action="{{ route('deletecourse', ['course_id' => $course->course_id]) }}" method="get">
                         @csrf
                         <button type="submit" class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
                             Delete
